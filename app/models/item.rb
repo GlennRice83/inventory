@@ -1,3 +1,3 @@
 class Item < ActiveRecord::Base
-  has_one :quantity
+  has_many :units
 end

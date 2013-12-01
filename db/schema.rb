@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131201191148) do
+ActiveRecord::Schema.define(version: 20131201190917) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,12 +23,12 @@ ActiveRecord::Schema.define(version: 20131201191148) do
     t.datetime "updated_at"
   end
 
-  create_table "quantities", force: true do |t|
+  create_table "units", force: true do |t|
+    t.integer  "item_id"
     t.float    "value"
-    t.string   "unit"
+    t.string   "measure"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "item_id"
   end
 
 end
