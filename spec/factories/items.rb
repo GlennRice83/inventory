@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :item do
-    name "MyString"
-    sku "MyString"
+    value 1.5
+    measure "MyString"
   end
 end

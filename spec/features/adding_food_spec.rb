@@ -1,10 +1,10 @@
 require "spec_helper"
 
 feature "Adding food" do
-  let(:item) { create(:item) }
+  let(:food) { create(:food) }
   scenario "I can add units to the inventory" do
-    visit new_unit_path
-    fill_in :sku, with: item.sku
+    visit new_item_path
+    fill_in :sku, with: food.sku
     fill_in :value, with: 1.4
     fill_in :measure, with: "lbs"
     click_on :create
