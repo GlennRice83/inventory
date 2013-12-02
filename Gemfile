@@ -32,13 +32,14 @@ group :doc do
 end
 
 group :development do
-  gem 'factory_girl'
-  gem 'factory_girl_rails'
   gem 'rails-erd'
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'rspec-rails', "~> 2.14.0"
+  gem "capybara"
+  gem 'factory_girl'
+  gem 'factory_girl_rails'
 end
 
 # Use ActiveModel has_secure_password

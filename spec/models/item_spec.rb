@@ -1,5 +1,6 @@
 require 'spec_helper'
 
 describe Item do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "I can add units to the inventory" do
+  end
 end
