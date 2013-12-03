@@ -1,0 +1,6 @@
+<%= form_for @item do |f| %>
+  <% fields_for @item.food do |food| %>
+    <%= food.label :sku %>
+    <%= food.text_field :sku %>
+  <% end %>
+<% end %>
