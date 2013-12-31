@@ -7,12 +7,15 @@ gem "pg"
 
 # Use SCSS for stylesheets
 gem "sass-rails", "~> 4.0.0"
+gem "bootstrap-sass", "~> 3.0.3.0"
 
 # Use Uglifier as compressor for JavaScript assets
 gem "uglifier", ">= 1.3.0"
 
 # Use CoffeeScript for .js.coffee assets and views
 gem "coffee-rails", "~> 4.0.0"
+
+gem "active_attr"
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem "therubyracer", platforms: :ruby
@@ -34,26 +37,23 @@ group :doc do
 end
 
 group :development do
-  gem "pry-rails"
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem "meta_request"
   gem "rails-erd"
   gem "annotate"
 end
 
 group :development, :test do
+  gem "pry-rails"
+  gem "debugger", "~> 1.6.3"
+  gem "pry-debugger"
   gem "rspec-rails", "~> 2.14.0"
   gem "capybara"
   gem "factory_girl"
   gem "factory_girl_rails"
 end
 
-# Use ActiveModel has_secure_password
-# gem "bcrypt-ruby", "~> 3.0.0"
-
-# Use unicorn as the app server
-# gem "unicorn"
-
-# Use Capistrano for deployment
-# gem "capistrano", group: :development
-
-# Use debugger
-# gem "debugger", group: [:development, :test]
+group :test do
+  gem "launchy"
+end

@@ -1,5 +1,24 @@
 class ItemsController < ApplicationController
-  def new
-    @item = Item.new
+  helper_method :item_form
+
+  def index; end
+
+  def new; end
+
+  def create
+    if item_form.save
+      redirect_to(
+        items_path,
+        flash: { success: "item successfully created" }
+      )
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def item_form
+    @item_form ||= ItemForm.new(params[:item_form])
   end
 end

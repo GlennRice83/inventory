@@ -1,6 +1,31 @@
-<%= form_for @item do |f| %>
-  <% fields_for @item.food do |food| %>
-    <%= food.label :sku %>
-    <%= food.text_field :sku %>
+<%= form_for item_form, url: items_path do |form| %>
+  <% if item_form.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(item_form.errors.count, "error") %>
+        prohibited this post from being saved:
+      </h2>
+
+      <ul>
+      <% item_form.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
   <% end %>
+  <fieldset>
+    <%= form.label :sku %>
+    <%= form.text_field :sku %>
+  </fieldset>
+
+  <fieldset>
+    <%= form.label :unit %>
+    <%= form.text_field :unit %>
+  </fieldset>
+
+  <fieldset>
+    <%= form.label :value %>
+    <%= form.text_field :value %>
+  </fieldset>
+
+  <%= form.submit "Create" %>
 <% end %>
