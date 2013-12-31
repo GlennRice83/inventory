@@ -1,0 +1,8 @@
+<% @items.each do |item| %>
+  <article class="item" id="id#<%= item.id %>">
+    <h1>Item <%= item.id %></h1>
+    <b>Food sku: </b><%= item.food.sku %><br>
+    <b><%= item.unit %>: </b><%= item.value %>
+  </article>
+  <hr>
+<% end %>

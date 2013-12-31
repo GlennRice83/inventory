@@ -1,7 +1,9 @@
 class ItemsController < ApplicationController
   helper_method :item_form
 
-  def index; end
+  def index
+    @items = Item.all
+  end
 
   def new; end
 

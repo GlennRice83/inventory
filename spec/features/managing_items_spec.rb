@@ -15,7 +15,7 @@ feature "Managing items" do
   end
 
   scenario "can be viewed as an index" do
-    create_list(:food, 3)
+    create_list(:item, 3, food: food)
     visit items_path
 
     expect(page).to have_css("article.item", count: 3)
