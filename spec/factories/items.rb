@@ -15,6 +15,6 @@
 FactoryGirl.define do
   factory :item do
     value 1.5
-    measure "MyString"
+    unit "Lbs"
   end
 end
