@@ -12,4 +12,11 @@ feature "Managing containers" do
     expect(page).to have_css("div", text: "container successfully created")
     expect(Container.where(name: "My Container").count).to eq(1)
   end
+
+  scenario "can be viewed as an index" do
+    create_list(:container, 3)
+    visit containers_path
+
+    expect(page).to have_css("article.container", count: 3)
+  end
 end

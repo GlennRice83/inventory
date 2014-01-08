@@ -13,4 +13,8 @@ class Container < ActiveRecord::Base
   include ActsAsTree
   acts_as_tree order: "name"
   has_many :items
+
+  def parent
+    super || NilContainer.new
+  end
 end

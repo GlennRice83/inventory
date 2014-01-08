@@ -1,7 +1,9 @@
 class ContainersController < ApplicationController
   helper_method :container_form
 
-  def index; end
+  def index
+    @containers = Container.all
+  end
 
   def new; end
 
