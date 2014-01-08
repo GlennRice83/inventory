@@ -14,6 +14,8 @@ class Container < ActiveRecord::Base
   acts_as_tree order: "name"
   has_many :items
 
+  validates :name, uniqueness: true, presence: true
+
   def parent
     super || NilContainer.new
   end
