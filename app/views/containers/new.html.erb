@@ -1,26 +1,4 @@
 <%= form_for container_form, url: containers_path do |form| %>
-  <% if container_form.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(container_form.errors.count, "error") %>
-        prohibited this post from being saved:
-      </h2>
-
-      <ul>
-      <% container_form.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <fieldset>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </fieldset>
-
-  <fieldset>
-    <%= form.label :parent_id %>
-    <%= form.text_field :parent_id %>
-  </fieldset>
-
+  <%= render form %>
   <%= form.submit "Create" %>
 <% end %>
