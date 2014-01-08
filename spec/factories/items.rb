@@ -10,9 +10,6 @@
 #  updated_at   :datetime
 #  container_id :integer
 #
-
-# Read about factories at https://github.com/thoughtbot/factory_girl
-
 FactoryGirl.define do
   factory :item do
     value 1.5
