@@ -13,6 +13,6 @@
 FactoryGirl.define do
   factory :item do
     value 1.5
-    unit "Lbs"
+    unit "lbs"
   end
 end

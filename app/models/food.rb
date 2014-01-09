@@ -16,8 +16,8 @@ class Food < ActiveRecord::Base
   validates :sku, uniqueness: true, presence: true
 
   def total_quantity(unit = "lbs")
-    unit_sum = items.inject(Unit.new("0 #{unit}")) do |sum, i|
-      sum + Unit.new("#{i.value} #{i.unit.to_s}")
+    unit_sum = items.inject(Unit.new(0, unit)) do |sum, i|
+      sum + Unit.new(i.value, i.unit)
     end
 
     unit_sum >>= unit
