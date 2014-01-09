@@ -13,4 +13,5 @@ class Food < ActiveRecord::Base
   has_many :items
 
   validates :name, uniqueness: true, presence: true
+  validates :sku, uniqueness: true, presence: true
 end

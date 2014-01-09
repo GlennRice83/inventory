@@ -11,7 +11,7 @@ feature "Managing containers" do
   context "creating containers" do
     let!(:parent) { create(:container) }
 
-    scenario "container be created and inserted into the tree" do
+    scenario "container is created and inserted into the tree" do
       visit new_container_path
 
       fill_in "Name", with: "My Container"
