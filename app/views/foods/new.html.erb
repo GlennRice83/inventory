@@ -1,0 +1,5 @@
+<%= form_for @food do |form| %>
+  <%= render "shared/errors", object: @food %>
+  <%= render form %>
+  <%= form.submit "Create" %>
+<% end %>
