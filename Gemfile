@@ -47,6 +47,7 @@ group :development do
 end
 
 group :development, :test do
+  gem "awesome_print"
   gem "pry-rails"
   gem "debugger", "~> 1.6.3"
   gem "pry-debugger"
