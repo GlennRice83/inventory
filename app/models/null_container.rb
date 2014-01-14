@@ -1,5 +1,5 @@
 class NullContainer
-  def initalize(parent: nil, child: nil)
+  def initialize(parent: nil, child: nil)
     @parent = parent
     @child = child
   end
