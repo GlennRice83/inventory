@@ -17,6 +17,10 @@ class Container < ActiveRecord::Base
   validates :name, uniqueness: true, presence: true
 
   def parent
-    super || NilContainer.new
+    super || NullContainer.new(child: self)
+  end
+
+  def children
+    super || NullContainer.new(parent: self)
   end
 end
