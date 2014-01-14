@@ -13,7 +13,7 @@ class NullContainer
   end
 
   def children
-    @child ||= Container.none
+    Container.where(parent_id: nil)
   end
 
   def items
