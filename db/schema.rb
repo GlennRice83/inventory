@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140116020013) do
+ActiveRecord::Schema.define(version: 20140116020937) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20140116020013) do
     t.string   "containerlike_type"
     t.boolean  "combinable"
     t.datetime "expiration_date"
+    t.integer  "state_cd"
   end
 
   create_table "meal_plan_meals", force: true do |t|

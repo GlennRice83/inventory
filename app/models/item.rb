@@ -18,4 +18,6 @@
 class Item < ActiveRecord::Base
   belongs_to :food
   belongs_to :containerlike, polymorphic: true
+
+  as_enum :state, available: 1, reserved: 2, trash: 3, toilet: 4
 end
