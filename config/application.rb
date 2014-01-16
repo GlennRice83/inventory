@@ -8,7 +8,5 @@ Bundler.require(:default, Rails.env)
 
 module Mother
   class Application < Rails::Application
-    require "pry"
-    config.console = Pry
   end
 end

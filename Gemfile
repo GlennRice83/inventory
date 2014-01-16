@@ -51,7 +51,7 @@ end
 
 group :development, :test do
   gem "awesome_print"
-  gem "pry"
+  gem "pry-rails"
   gem "debugger", "~> 1.6.3"
   gem "pry-debugger"
   gem "rspec-rails", "~> 2.14.0"
