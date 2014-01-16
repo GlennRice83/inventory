@@ -34,7 +34,7 @@ gem "acts_as_tree"
 
 gem "ruby-units"
 
-gem "foundation-rails"
+gem "foundation-rails", "~> 5.0.3"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
