@@ -27,7 +27,7 @@ describe Food do
       create(:item, unit: "lbs", value: 1, food: food)
       create(:item, unit: "kg", value: 2, food: food)
 
-      expect(food.total_quantity("kg")).to be_close(2.5, 0.5)
+      expect(food.total_quantity("kg")).to be_within(0.05).of(2.5)
     end
   end
 end

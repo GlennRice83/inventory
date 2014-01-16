@@ -20,4 +20,12 @@ class Item < ActiveRecord::Base
   belongs_to :containerlike, polymorphic: true
 
   as_enum :state, available: 1, reserved: 2, trash: 3, toilet: 4
+
+  def time_to_expired
+    expiration_date - Time.now
+  end
+
+  def expired?
+    time_to_expired < 0
+  end
 end
