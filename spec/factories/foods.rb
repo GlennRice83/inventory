@@ -7,7 +7,9 @@
 #  sku        :string(255)
 #  created_at :datetime
 #  updated_at :datetime
+#  shelf_life :decimal(, )
 #
+
 FactoryGirl.define do
   factory :food do
     sequence(:name) { |n| "food #{n}" }
