@@ -12,6 +12,9 @@
 
 class Food < ActiveRecord::Base
   has_many :items
+  has_many :store_items
+  has_many :stores, through: :store_items
+
 
   validates :name, uniqueness: true, presence: true
   validates :sku, uniqueness: true, presence: true
