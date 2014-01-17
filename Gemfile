@@ -34,6 +34,7 @@ gem "acts_as_tree"
 
 gem "ruby-units"
 
+gem "modernizr-rails"
 gem "foundation-rails", "~> 5.0.3"
 
 group :doc do
