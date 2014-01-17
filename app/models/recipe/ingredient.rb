@@ -9,6 +9,7 @@
 #  preperation :text
 #  unit        :string(255)
 #  value       :float
+#  food_id     :integer
 #
 
 class Recipe::Ingredient < ActiveRecord::Base

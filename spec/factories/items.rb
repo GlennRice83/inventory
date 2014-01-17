@@ -13,6 +13,7 @@
 #  containerlike_type :string(255)
 #  combinable         :boolean
 #  expiration_date    :datetime
+#  state_cd           :integer
 #
 
 FactoryGirl.define do

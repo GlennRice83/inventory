@@ -9,6 +9,7 @@
 #  preperation :text
 #  unit        :string(255)
 #  value       :float
+#  food_id     :integer
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl
