@@ -64,3 +64,7 @@ end
 group :test do
   gem "launchy"
 end
+
+group :production, :staging do
+  gem "unicorn"
+end
