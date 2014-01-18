@@ -11,6 +11,7 @@
 #
 
 class Food < ActiveRecord::Base
+  belongs_to :container
   has_many :items
   has_many :store_items
   has_many :stores, through: :store_items
@@ -26,5 +27,13 @@ class Food < ActiveRecord::Base
 
     unit_sum >>= unit
     unit_sum.scalar.to_f
+  end
+
+  def default_container
+    self.container
+  end
+
+  def default_container=(container)
+    self.container = container
   end
 end

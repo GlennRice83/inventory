@@ -12,5 +12,7 @@
 require 'spec_helper'
 
 describe Purchase do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "#price_per_unit" do
+    it "takes a unit and returns the price per unit"
+  end
 end
