@@ -39,7 +39,6 @@ gem "foundation-rails", "~> 5.0.3"
 
 gem "money-rails"
 
-
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem "sdoc", require: false
