@@ -8,5 +8,15 @@ Bundler.require(:default, Rails.env)
 
 module Mother
   class Application < Rails::Application
+    console do
+      require "pry"
+      config.console = Pry
+      unless defined? Pry::ExtendCommandBundle
+        Pry::ExtendCommandBundle = Module.new
+      end
+      require "rails/console/app"
+      require "rails/console/helpers"
+      TOPLEVEL_BINDING.eval('self').extend ::Rails::ConsoleMethods
+    end
   end
 end

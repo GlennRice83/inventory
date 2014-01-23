@@ -7,6 +7,8 @@
 #  store_item_id :integer
 #  created_at    :datetime
 #  updated_at    :datetime
+#  unit          :string(255)
+#  value         :float
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl

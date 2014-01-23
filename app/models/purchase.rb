@@ -7,6 +7,8 @@
 #  store_item_id :integer
 #  created_at    :datetime
 #  updated_at    :datetime
+#  unit          :string(255)
+#  value         :float
 #
 
 class Purchase < ActiveRecord::Base

@@ -1,6 +1,6 @@
 source "https://rubygems.org"
-ruby "2.0.0"
-gem "rails", "4.0.0"
+gem "rails", "4.0.2"
+
 
 gem "pg"
 
@@ -16,7 +16,7 @@ gem "coffee-rails", "~> 4.0.0"
 
 gem "active_attr"
 
-gem "simple_enum"
+gem 'simple_enum', github: 'lwe/simple_enum', branch: 'ng', :require => 'simple_enum'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem "therubyracer", platforms: :ruby
@@ -32,12 +32,13 @@ gem "jbuilder", "~> 1.2"
 
 gem "acts_as_tree"
 
-gem "ruby-units"
+#gem "ruby-units"
 
 gem "modernizr-rails"
 gem "foundation-rails", "~> 5.0.3"
 
 gem "money-rails"
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

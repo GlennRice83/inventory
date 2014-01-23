@@ -2,12 +2,13 @@
 #
 # Table name: foods
 #
-#  id         :integer          not null, primary key
-#  name       :string(255)
-#  sku        :string(255)
-#  created_at :datetime
-#  updated_at :datetime
-#  shelf_life :decimal(, )
+#  id           :integer          not null, primary key
+#  name         :string(255)
+#  sku          :string(255)
+#  created_at   :datetime
+#  updated_at   :datetime
+#  shelf_life   :decimal(, )
+#  container_id :integer
 #
 
 require "spec_helper"
