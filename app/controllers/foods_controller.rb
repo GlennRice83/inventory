@@ -15,6 +15,7 @@ class FoodsController < ApplicationController
    @food = Food.new(food_params)
 
    if @food.save
+     flash[:success] = "food successfully created"
      redirect_to foods_path
    else
      render "new"

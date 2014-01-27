@@ -22,12 +22,11 @@ class Food < ActiveRecord::Base
   validates :sku, uniqueness: true, presence: true
 
   def total_quantity(unit = "lbs")
-    unit_sum = items.inject(Unit.new(0, unit)) do |sum, i|
-      sum + Unit.new(i.value, i.unit)
+    unit_sum = items.inject(Phys::Quantity.new(0, unit)) do |sum, i|
+      sum += Phys::Quantity.new(i.value, i.unit)
     end
 
-    unit_sum >>= unit
-    unit_sum.scalar.to_f
+    unit_sum.value.to_f
   end
 
   def default_container
