@@ -8,7 +8,7 @@ class FoodsController < ApplicationController
   end
 
   def show
-    @food = Food.find(params[:id])
+    @food = FoodDecorator.new(Food.find(params[:id]))
   end
 
   def create

@@ -17,7 +17,7 @@ gem "coffee-rails", "~> 4.0.0"
 
 gem "active_attr"
 
-gem 'simple_enum', github: 'lwe/simple_enum', branch: 'ng', :require => 'simple_enum'
+gem "simple_enum", github: "lwe/simple_enum", branch: "ng", :require => "simple_enum"
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem "therubyracer", platforms: :ruby
@@ -41,6 +41,8 @@ gem "foundation-rails", "~> 5.0.3"
 gem "money-rails"
 
 gem "phys-units", "~> 0.9.7"
+
+gem "draper", "~> 1.3"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

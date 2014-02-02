@@ -26,7 +26,7 @@ class Food < ActiveRecord::Base
       sum += Phys::Quantity.new(i.value, i.unit)
     end
 
-    unit_sum.value.to_f
+    unit_sum.value
   end
 
   def default_container

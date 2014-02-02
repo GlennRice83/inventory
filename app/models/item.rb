@@ -26,7 +26,15 @@ class Item < ActiveRecord::Base
     expiration_date - Time.now
   end
 
+  def location_name
+    containerlike.name || "#{containerlike_type} #{containerlike.id}"
+  end
+
   def expired?
     time_to_expired < 0
+  end
+
+  def containerlike
+    super || Container.none
   end
 end
