@@ -1,4 +1,4 @@
-<%= form_for recipe_form, url: recipes_path do |form| %>
+<%= form_for recipe_form, url: recipes_path, html: { class: "js-new-recipe-form" } do |form| %>
   <%= render "shared/errors", object: recipe_form %>
   <%= render form %>
   <%= form.submit "Create" %>
