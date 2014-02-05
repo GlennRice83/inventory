@@ -3,6 +3,10 @@ class RecipesController < ApplicationController
 
   def new; end
 
+  def create
+    binding.pry
+  end
+
   private
 
   def recipe_form

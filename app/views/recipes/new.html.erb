@@ -1,5 +1,6 @@
 <%= form_for recipe_form, url: recipes_path, html: { class: "js-new-recipe-form" } do |form| %>
   <%= render "shared/errors", object: recipe_form %>
+  <h1>Add New Recipe</h1>
   <%= render form %>
-  <%= form.submit "Create" %>
+  <%= form.submit "Create", class: "button" %>
 <% end %>
