@@ -2,7 +2,6 @@ source "https://rubygems.org"
 ruby "2.1.0"
 gem "rails", "4.0.2"
 
-
 gem "pg"
 
 # Use SCSS for stylesheets
@@ -14,6 +13,9 @@ gem "uglifier", ">= 1.3.0"
 
 # Use CoffeeScript for .js.coffee assets and views
 gem "coffee-rails", "~> 4.0.0"
+
+gem 'ember-rails'
+gem 'ember-source', '1.3.0' # or the version you need
 
 gem "active_attr"
 
