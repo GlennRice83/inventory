@@ -7,12 +7,4 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 unless Rails.env.production?
-  10.times do
-    FactoryGirl.create(
-      :item,
-      food: FactoryGirl.create(:food),
-      container: FactoryGirl.create(:container)
-    )
-  end
-
 end
