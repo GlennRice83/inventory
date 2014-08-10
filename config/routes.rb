@@ -1,6 +1,13 @@
 Mother::Application.routes.draw do
-  resources :items
-  resources :containers
-  resources :foods
-  resources :recipes
+  namespace :api do
+    namespace :v1 do
+      resources :items
+      resources :containers
+      resources :foods
+      resources :recipes
+    end
+  end
+
+  get 'ember/index'
+  root 'ember#index'
 end
