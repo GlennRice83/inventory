@@ -11,9 +11,6 @@ describe Item do
   end
 
   describe "#expired?" do
-    it "returns true if item is expired" do
-      item.expiration_date = Time.now - 5.days
-      expect(item.expired?).to be_true
-    end
+    it "returns true if item is expired"
   end
 end
