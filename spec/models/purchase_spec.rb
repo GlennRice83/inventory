@@ -1,16 +1,3 @@
-# == Schema Information
-#
-# Table name: purchases
-#
-#  id            :integer          not null, primary key
-#  price_cents   :integer
-#  store_item_id :integer
-#  created_at    :datetime
-#  updated_at    :datetime
-#  unit          :string(255)
-#  value         :float
-#
-
 require 'spec_helper'
 
 describe Purchase do
