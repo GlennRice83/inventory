@@ -71,6 +71,7 @@ GEM
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
     diff-lcs (1.2.5)
+    ember-data-factory-guy (0.5.1)
     ember-data-source (1.0.0.beta.8)
       ember-source
     ember-rails (0.15.0)
@@ -234,6 +235,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.2.0.1)
   capybara (~> 2.4.1)
   coffee-rails (~> 4.0.1)
+  ember-data-factory-guy (~> 0.5.1)
   ember-rails (~> 0.15.0)
   ember-source (~> 1.6.1)
   factory_girl_rails (~> 4.4.1)

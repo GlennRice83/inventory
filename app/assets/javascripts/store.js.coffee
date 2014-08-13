@@ -12,5 +12,5 @@ Mother.ApplicationAdapter = DS.ActiveModelAdapter.extend({
 })
 
 DS.RESTAdapter.reopen({
-  namespace: 'api/v3'
+  namespace: 'api/v1'
 });

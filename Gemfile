@@ -30,6 +30,7 @@ group :development, :test do
   gem 'capybara', '~> 2.4.1'
   gem 'factory_girl_rails', '~> 4.4.1'
   gem 'teaspoon', '~> 0.8.0'
+  gem 'ember-data-factory-guy', '~> 0.5.1'
 end
 
 group :test do
