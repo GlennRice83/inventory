@@ -11,7 +11,7 @@ test 'root route', ->
 test 'foods route', ->
   visit '/foods'
   andThen ->
-    expected = 'foods'
+    expected = 'foods.index'
     equal(current_route(), expected, "Expected #{expected} got: #{current_route()}")
 
 current_route = ->
