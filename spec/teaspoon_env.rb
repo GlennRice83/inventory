@@ -9,7 +9,7 @@ Teaspoon.configure do |config|
     suite.use_framework :qunit
 
     suite.matcher =
-      '{spec/javascripts,app/assets}/**/*_test.{js,js.coffee,coffee}'
+      '{spec/javascripts,app/assets}/**/*_spec.{js,js.coffee,coffee}'
 
     suite.helper = 'spec_helper'
 
