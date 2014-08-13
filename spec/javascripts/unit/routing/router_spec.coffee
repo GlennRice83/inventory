@@ -2,17 +2,13 @@ module 'Routing specs', ->
   setup: ->
     Mother.reset()
 
-test 'root route', ->
-  visit '/'
-  andThen ->
-    expected = 'index'
-    equal(current_route(), expected, "Expected #{expected} got: #{current_route()}")
+test 'root route', -> routesTo('/', 'index')
+test 'foods route', -> routesTo('/foods', 'foods.index')
 
-test 'foods route', ->
-  visit '/foods'
+routesTo = (url, routeName) ->
+  visit url
   andThen ->
-    expected = 'foods.index'
-    equal(current_route(), expected, "Expected #{expected} got: #{current_route()}")
+    equal(currentRoute(), routeName, "Expected #{routeName} got: #{currentRoute()}")
 
-current_route = ->
+currentRoute = ->
   Mother.__container__.lookup('controller:application').currentRouteName
