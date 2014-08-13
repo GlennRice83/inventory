@@ -6,5 +6,13 @@ test 'root route', ->
   visit '/'
   andThen ->
     expected = 'index'
-    current_route = Mother.__container__.lookup('controller:application').currentRouteName
-    equal(current_route, expected, "Expected #{expected} got: #{current_route}")
+    equal(current_route(), expected, "Expected #{expected} got: #{current_route()}")
+
+test 'foods route', ->
+  visit '/foods'
+  andThen ->
+    expected = 'foods'
+    equal(current_route(), expected, "Expected #{expected} got: #{current_route()}")
+
+current_route = ->
+  Mother.__container__.lookup('controller:application').currentRouteName
