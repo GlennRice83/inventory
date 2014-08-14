@@ -16,6 +16,7 @@ gem 'jquery-rails', '~> 3.1.1'
 gem 'acts_as_tree', '~> 2.0.0'
 gem 'money-rails', '~> 0.12.0'
 gem 'phys-units', '~> 0.9.7'
+gem 'apitome', '~> 0.0.7'
 
 group :development do
   gem 'better_errors', '~> 1.1.0'
@@ -32,7 +33,7 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.4.1'
   gem 'teaspoon', '~> 0.8.0'
   gem 'ember-data-factory-guy', '~> 0.5.1'
-  gem 'rails-assets-jquery-mockjax'
+  gem 'rspec_api_documentation', '~> 4.0.0'
 end
 
 group :test do
