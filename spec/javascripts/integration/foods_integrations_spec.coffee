@@ -28,7 +28,8 @@ test('Visit Foods index page', ->
 
 test('Visit a Food show page', ->
   food = testHelper.make('food')
-  visit "/foods/#{food.id}"
+  visit "/foods"
+  click('.foods li:first a')
   andThen ->
     foundTitle = find('h1').text()
     expectedTitle = food.name
