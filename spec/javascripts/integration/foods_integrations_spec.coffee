@@ -28,15 +28,18 @@ test('Visit Foods index page', ->
 
 test('Create new Food', ->
   foodName = 'New Food'
+  foodSku = 'New Food Sku'
   visit('/foods/new')
   fillIn('input.name', foodName)
+  fillIn('input.sku', foodSku)
   click('button.submit')
 
   andThen ->
-    foundFoodName = find('.foods li:last').text()
+    foundFoodName = find('.foods li:last').text().trim()
+    expectedFoodName = "#{foodName} : #{foodSku}"
     equal(
       foundFoodName,
-      foodName,
-      "Expected foods to contain #{foodName}, got: #{foundFoodName}"
+      expectedFoodName,
+      "Expected foods to contain #{expectedFoodName}, got: #{foundFoodName}"
     )
 )
