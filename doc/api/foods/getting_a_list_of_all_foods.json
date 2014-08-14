@@ -1,0 +1,41 @@
+{
+  "resource": "Foods",
+  "http_method": "GET",
+  "route": "/api/v1/foods",
+  "description": "Getting a list of all foods",
+  "explanation": null,
+  "parameters": [
+    {
+      "name": "name",
+      "description": "The name of the food"
+    },
+    {
+      "name": "sku",
+      "description": "The SKU of the food"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/v1/foods",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\"foods\":[{\"id\":42,\"name\":\"food 1\"},{\"id\":43,\"name\":\"food 2\"},{\"id\":44,\"name\":\"food 3\"}]}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

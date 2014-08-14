@@ -1,0 +1,19 @@
+{
+  "resources": [
+    {
+      "name": "Foods",
+      "examples": [
+        {
+          "description": "Getting a list of all foods",
+          "link": "foods/getting_a_list_of_all_foods.json",
+          "groups": "all"
+        },
+        {
+          "description": "Creating a new Food",
+          "link": "foods/creating_a_new_food.json",
+          "groups": "all"
+        }
+      ]
+    }
+  ]
+}
