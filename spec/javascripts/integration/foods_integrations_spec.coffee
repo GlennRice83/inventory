@@ -5,13 +5,13 @@ store = null
 
 module('Foods Integration:',
   setup: ->
+    Mother.reset()
     Mother.ApplicationAdapter = DS.FixtureAdapter
     testHelper = IntegrationTestHelper.setup(Mother)
     store = testHelper.getStore()
 
   teardown: ->
     Em.run( -> testHelper.teardown() )
-    Mother.reset()
 )
 
 test('Visit Foods index page', ->
@@ -23,6 +23,19 @@ test('Visit Foods index page', ->
       foodList.length,
       foods.length,
       "Expected foods to contain #{foods.length}, got: #{foodList.length}"
+    )
+)
+
+test('Visit a Food show page', ->
+  food = testHelper.make('food')
+  visit "/foods/#{food.id}"
+  andThen ->
+    foundTitle = find('h1').text()
+    expectedTitle = food.name
+    equal(
+      foundTitle,
+      expectedTitle,
+      "Expected to find #{expectedTitle}, got: #{foundTitle}"
     )
 )
 
