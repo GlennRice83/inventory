@@ -5,7 +5,16 @@ module Api
         render json: Food.all
       end
 
-      def show; end
+      def create
+        food = Food.create(food_params)
+        render status: :created, json: food
+      end
+
+      private
+
+      def food_params
+        params.require(:food).permit(:name, :sku)
+      end
     end
   end
 end
