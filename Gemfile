@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 ruby '2.1.2'
 
 gem 'rails', '~> 4.1.4'
@@ -31,6 +32,7 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.4.1'
   gem 'teaspoon', '~> 0.8.0'
   gem 'ember-data-factory-guy', '~> 0.5.1'
+  gem 'rails-assets-jquery-mockjax'
 end
 
 group :test do

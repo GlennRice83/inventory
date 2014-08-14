@@ -1,18 +1,26 @@
-module 'Foods integration', ->
-  setup: ->
-    Mother.reset()
-    setupFactories()
+IntegrationTestHelper = Em.Object.createWithMixins(FactoryGuyTestMixin)
 
-test 'Foods index page', ->
+testHelper = null
+store = null
+
+module('Foods integration',
+  setup: ->
+    testHelper = IntegrationTestHelper.setup(Mother)
+    store = testHelper.getStore()
+
+  teardown: ->
+    Em.run( -> testHelper.teardown() )
+)
+
+test('Foods index page', ->
+  foods = store.makeList('food', 3)
+
   visit '/foods'
   andThen ->
-    foods = [1,2]
-    foodsLength = find('.foods li').length
-    equal(foodsLength, foods.length, "Expected foods to contain #{foods.length}, got: #{foodsLength}")
-
-setupFactories = ->
-  FactoryGuy.define('food', ->
-    sequences:
-      name: (num) ->
-        "food #{num}"
-  )
+    foodList = find('.foods li')
+    equal(
+      foodList.length,
+      foods.length,
+      "Expected foods to contain #{foods.length}, got: #{foodList.length}"
+    )
+)
