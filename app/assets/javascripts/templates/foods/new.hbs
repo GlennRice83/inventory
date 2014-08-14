@@ -1,0 +1,13 @@
+<h1>Add a food</h1>
+{{#each error in errors.title}}
+  <p>{{error.message}}</p>
+{{/each}}
+<form {{action 'create' on='submit'}}>
+  <div>
+    <label>
+      name<br>
+      {{input class='name' type='text' value=name}}
+    </label>
+  </div>
+  <button class='submit'>Create</button>
+</form>

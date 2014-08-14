@@ -3,18 +3,19 @@ IntegrationTestHelper = Em.Object.createWithMixins(FactoryGuyTestMixin)
 testHelper = null
 store = null
 
-module('Foods integration',
+module('Foods Integration:',
   setup: ->
+    Mother.ApplicationAdapter = DS.FixtureAdapter
     testHelper = IntegrationTestHelper.setup(Mother)
     store = testHelper.getStore()
 
   teardown: ->
     Em.run( -> testHelper.teardown() )
+    Mother.reset()
 )
 
-test('Foods index page', ->
+test('Visit Foods index page', ->
   foods = store.makeList('food', 3)
-
   visit '/foods'
   andThen ->
     foodList = find('.foods li')
@@ -22,5 +23,20 @@ test('Foods index page', ->
       foodList.length,
       foods.length,
       "Expected foods to contain #{foods.length}, got: #{foodList.length}"
+    )
+)
+
+test('Create new Food', ->
+  foodName = 'New Food'
+  visit('/foods/new')
+  fillIn('input.name', foodName)
+  click('button.submit')
+
+  andThen ->
+    foundFoodName = find('.foods li:last').text()
+    equal(
+      foundFoodName,
+      foodName,
+      "Expected foods to contain #{foodName}, got: #{foundFoodName}"
     )
 )

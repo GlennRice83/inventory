@@ -2,4 +2,4 @@
 
 Mother.Router.map ()->
   @resource 'foods', ->
-    
+    @route('new')
