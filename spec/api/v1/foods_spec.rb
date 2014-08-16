@@ -41,4 +41,15 @@ resource 'Foods' do
       )
     end
   end
+
+  delete 'api/v1/foods/:id' do
+    let(:food) { create(:food) }
+    let(:id) { food.id }
+
+    example 'Destroying a Food' do
+      do_request
+      expect(status).to eq(200)
+      expect(Food.find_by_id(food.id)).to eq nil
+    end
+  end
 end

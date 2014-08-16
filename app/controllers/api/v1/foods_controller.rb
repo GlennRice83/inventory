@@ -10,6 +10,11 @@ module Api
         render status: :created, json: food
       end
 
+      def destroy
+        Food.destroy(params[:id])
+        render status: :ok, nothing: true
+      end
+
       private
 
       def food_params

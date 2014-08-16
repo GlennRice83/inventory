@@ -9,6 +9,11 @@
           "groups": "all"
         },
         {
+          "description": "Destroying a Food",
+          "link": "foods/destroying_a_food.json",
+          "groups": "all"
+        },
+        {
           "description": "Creating a new Food",
           "link": "foods/creating_a_new_food.json",
           "groups": "all"

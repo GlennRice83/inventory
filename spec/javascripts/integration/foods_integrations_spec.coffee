@@ -29,7 +29,7 @@ test('Visit Foods index page', ->
 
 test('Visit a Food show page', ->
   food = testHelper.make('food')
-  visit "/foods"
+  visit '/foods'
   click('.foods li:first a')
   andThen ->
     foundTitle = find('h1').text()
@@ -50,11 +50,20 @@ test('Create new Food', ->
   click('button.submit')
 
   andThen ->
-    foundFoodName = find('.foods li:last').text().trim()
+    foundFoodName = find('.foods li:last a').text().trim()
     expectedFoodName = "#{foodName} : #{foodSku}"
     equal(
       foundFoodName,
       expectedFoodName,
       "Expected foods to contain #{expectedFoodName}, got: #{foundFoodName}"
     )
+)
+
+test('Destroy a Food', ->
+  food = testHelper.make('food')
+  visit '/foods'
+  click 'button.destroy:first'
+  andThen ->
+    foundLength = find('.foods li').length
+    equal(foundLength, 0, "Expected 0, got: #{foundLength}")
 )

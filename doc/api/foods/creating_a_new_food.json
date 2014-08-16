@@ -30,7 +30,7 @@
       "request_content_type": "application/json",
       "response_status": 201,
       "response_status_text": "Created",
-      "response_body": "{\"food\":{\"id\":45,\"name\":\"NEW FOOD NAME\"}}",
+      "response_body": "{\"food\":{\"id\":5,\"name\":\"NEW FOOD NAME\",\"sku\":\"NEW FOOD SKU\"}}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },
