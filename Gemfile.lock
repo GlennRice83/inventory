@@ -1,6 +1,5 @@
 GEM
   remote: https://rubygems.org/
-  remote: https://rails-assets.org/
   specs:
     actionmailer (4.1.4)
       actionpack (= 4.1.4)
@@ -35,7 +34,6 @@ GEM
       tzinfo (~> 1.1)
     acts_as_tree (2.0.0)
       activerecord (>= 3.0.0)
-    addressable (2.3.6)
     apitome (0.0.7)
       github-markdown
       railties (>= 3.2.5, < 5)
@@ -73,6 +71,7 @@ GEM
       execjs
     coffee-script-source (1.7.1)
     columnize (0.8.9)
+    database_cleaner (1.2.0)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
     diff-lcs (1.2.5)
@@ -106,8 +105,6 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.1)
     kgio (2.9.2)
-    launchy (2.4.2)
-      addressable (~> 2.3)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -252,12 +249,12 @@ DEPENDENCIES
   bootstrap-sass (~> 3.2.0.1)
   capybara (~> 2.4.1)
   coffee-rails (~> 4.0.1)
+  database_cleaner (~> 1.2.0)
   ember-data-factory-guy (~> 0.5.1)
   ember-rails (~> 0.15.0)
   ember-source (~> 1.6.1)
   factory_girl_rails (~> 4.4.1)
   jquery-rails (~> 3.1.1)
-  launchy (~> 2.4.2)
   meta_request (~> 0.3.4)
   money-rails (~> 0.12.0)
   pg (~> 0.17.1)

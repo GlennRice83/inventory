@@ -6,12 +6,13 @@ store = null
 module('Foods Integration:',
   setup: ->
     Mother.reset()
-    Mother.ApplicationAdapter = DS.FixtureAdapter
+    Teaspoon.hook('database_cleaner_start')
     testHelper = IntegrationTestHelper.setup(Mother)
     store = testHelper.getStore()
 
   teardown: ->
     Em.run( -> testHelper.teardown() )
+    Teaspoon.hook('database_cleaner_clean')
 )
 
 test('Visit Foods index page', ->
@@ -32,7 +33,7 @@ test('Visit a Food show page', ->
   click('.foods li:first a')
   andThen ->
     foundTitle = find('h1').text()
-    expectedTitle = food.name
+    expectedTitle = food.get('name')
     equal(
       foundTitle,
       expectedTitle,
