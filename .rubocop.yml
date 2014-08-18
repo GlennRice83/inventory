@@ -3,3 +3,9 @@ Documentation:
 
 Style/FileName:
   Enabled: false
+
+AllCops:
+  Include:
+    - "Gemfile"
+  Exclude:
+    - "db/**/*"
