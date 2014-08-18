@@ -1,0 +1,1 @@
+FactoryGuy.define 'item', {}

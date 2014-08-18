@@ -60,7 +60,7 @@ test('Create new Food', ->
 )
 
 test('Destroy a Food', ->
-  food = testHelper.make('food')
+  food = store.makeFixture('food')
   visit '/foods'
   click 'button.destroy:first'
   andThen ->

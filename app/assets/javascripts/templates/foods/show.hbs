@@ -1,4 +1,17 @@
 <h1>{{name}}</h1>
 <ul class="details">
-  <li>{{sku}}</li>
+  <li>SKU: {{sku}}</li>
+  <li>Item count: {{itemCount}}
 </ul>
+
+{{#if addingNewItem}}
+  <label for='new-item-value'>Value</label>
+  {{input type='text' value=controller.newItemValue id='new-item-value'}}
+
+  <label for='new-item-unit'>Unit</label>
+  {{input type='text' value=controller.newItemUnit id='new-item-unit'}}
+
+  <button id="save-new-item" {{action 'saveNewItem'}}>Save item</button>
+{{else}}
+  <button id="add-new-item" {{action 'addNewItem'}}>Add item</button>
+{{/if}}
