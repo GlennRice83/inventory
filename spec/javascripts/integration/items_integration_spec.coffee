@@ -30,13 +30,21 @@ test('View a list of Items for a Food', ->
 )
 
 test('Add an Item to a Food', ->
-  food = store.createRecord('food'
-    name: 'food name',
-    sku: 'food sku',
+  params = JSON.stringify(
+    {
+      'hook_args': {
+        'factory': 'food',
+        'attributes': {
+          'name': 'Apple',
+          'sku': '123456'
+        }
+      }
+    }
   )
-  food.save()
+  Teaspoon.hook('factory_girl', { 'method': 'POST', 'payload': params})
 
-  visit "/foods/#{food.id}"
+  visit '/foods'
+  click('.foods li:first a')
   click('#add-new-item')
   fillIn('input#new-item-value')
   fillIn('input#new-item-unit')

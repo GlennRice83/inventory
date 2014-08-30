@@ -7,6 +7,8 @@ module('Foods Integration:',
   setup: ->
     Mother.reset()
     Teaspoon.hook('database_cleaner_start')
+
+
     testHelper = IntegrationTestHelper.setup(Mother)
     store = testHelper.getStore()
 
@@ -16,14 +18,24 @@ module('Foods Integration:',
 )
 
 test('Visit Foods index page', ->
-  foods = store.makeList('food', 3)
+  payload_builder = (factory, attributes) ->
+    JSON.stringify(
+      { 'hook_args': { 'factory': factory, 'attributes': attributes } }
+    )
+
+  apple_payload = payload_builder('food', { 'name': 'apple', 'sku': '1234'})
+  Teaspoon.hook('factory_girl', { 'method': 'POST', 'payload': apple_payload})
+
+  orange_payload = payload_builder('food', { 'name': 'orange', 'sku': '43121'})
+  Teaspoon.hook('factory_girl', { 'method': 'POST', 'payload': orange_payload})
+
   visit '/foods'
   andThen ->
     foodList = find('.foods li')
     equal(
+      2,
       foodList.length,
-      foods.length,
-      "Expected foods to contain #{foods.length}, got: #{foodList.length}"
+      "Expected foods to contain 2, got: #{foodList.length}"
     )
 )
 

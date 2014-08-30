@@ -6,6 +6,10 @@ end
 
 Teaspoon.configure do |config|
   config.suite do |suite|
+    suite.hook :factory_girl do |args|
+      FactoryGirl.create(args[:factory], args[:attributes])
+    end
+
     suite.hook :database_cleaner_start do
       require 'database_cleaner'
 
