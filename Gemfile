@@ -30,7 +30,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0.2'
   gem 'capybara', '~> 2.4.1'
   gem 'factory_girl_rails', '~> 4.4.1'
-  gem 'teaspoon', '~> 0.8.0'
+  gem 'teaspoon', git: 'https://github.com/modeset/teaspoon.git'
   gem 'ember-data-factory-guy', '~> 0.5.1'
   gem 'rspec_api_documentation', '~> 4.0.0'
   gem 'database_cleaner', '~> 1.2.0'
